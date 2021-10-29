@@ -26,5 +26,5 @@ df['text'] = df['text'].replace({'\.':'','(/)':'','\(':'','\)':''},regex=True)
 df['text'] = df['text'].replace('[\.:"]','',regex =True)
 
 df['text'] = df['text'].fillna('').apply(str)
-
+df['text'] = re.sub("\s\s+", " ", df['text'])
 #df['text'] = "".join(c for c in s if unicodedata.category(c) not in ["No", "Lo"])
